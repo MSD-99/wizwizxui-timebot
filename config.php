@@ -2264,7 +2264,7 @@ function editInboundRemark($server_id, $uuid, $newRemark){
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -2361,7 +2361,7 @@ function editInboundTraffic($server_id, $uuid, $volume, $days, $editType = null)
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -2482,7 +2482,7 @@ function changeInboundState($server_id, $uuid){
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -2588,7 +2588,7 @@ function renewInboundUuid($server_id, $uuid){
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -2700,7 +2700,7 @@ function changeClientState($server_id, $inbound_id, $uuid){
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -2841,7 +2841,7 @@ function renewClientUuid($server_id, $inbound_id, $uuid){
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -2987,7 +2987,7 @@ function editClientRemark($server_id, $inbound_id, $uuid, $newRemark){
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -3134,7 +3134,7 @@ function editClientTraffic($server_id, $inbound_id, $uuid, $volume, $days, $edit
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -3302,7 +3302,7 @@ function deleteInbound($server_id, $uuid, $delete = 0){
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
     $response = getJson($server_id);
@@ -3400,7 +3400,7 @@ function resetIpLog($server_id, $remark){
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
 
@@ -3473,7 +3473,7 @@ function resetClientTraffic($server_id, $remark, $inboundId = null){
     $server_info = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
 
 
@@ -3546,7 +3546,7 @@ function addInboundAccount($server_id, $client_id, $inbound_id, $expiryTime, $re
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
     $reality = $server_info['reality'];
     $volume = ($volume == 0) ? 0 : floor($volume * 1073741824);
@@ -3787,7 +3787,7 @@ function getConnectionLink($server_id, $uniqid, $protocol, $remark, $port, $netT
     $header_type = $server_info['header_type'];
     $request_header = $server_info['request_header'];
     $response_header = $server_info['response_header'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
     preg_match("/^Host:(.*)/i",$request_header,$hostMatch);
 
@@ -4176,7 +4176,7 @@ function updateConfig($server_id, $inboundId, $protocol, $netType = 'tcp', $secu
     $header_type = $server_info['header_type'];
     $request_header = $server_info['request_header'];
     $response_header = $server_info['response_header'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
     $xtlsTitle = ($serverType == "sanaei" || $serverType == "alireza")?"XTLSSettings":"xtlsSettings";
     $sni = $server_info['sni'];
@@ -4464,7 +4464,7 @@ function editInbound($server_id, $uniqid, $uuid, $protocol, $netType = 'tcp', $s
     $header_type = $server_info['header_type'];
     $request_header = $server_info['request_header'];
     $response_header = $server_info['response_header'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
     $xtlsTitle = ($serverType == "sanaei" || $serverType == "alireza")?"XTLSSettings":"xtlsSettings";
     $sni = $server_info['sni'];
@@ -5378,7 +5378,7 @@ function getJson($server_id){
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
 
     $serverName = $server_info['username'];
     $serverPass = $server_info['password'];
@@ -5452,7 +5452,7 @@ function getNewCert($server_id){
     $stmt->close();
 
     $panel_url = $server_info['panel_url'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
 
     $serverName = $server_info['username'];
     $serverPass = $server_info['password'];
@@ -5529,7 +5529,7 @@ function addUser($server_id, $client_id, $protocol, $port, $expiryTime, $remark,
     $request_header = $server_info['request_header'];
     $response_header = $server_info['response_header'];
     $sni = $server_info['sni'];
-    $cookie = 'Cookie: session='.$server_info['cookie'];
+    $cookie = 'Cookie: 3x-ui='.$server_info['cookie'];
     $serverType = $server_info['type'];
     $xtlsTitle = ($serverType == "sanaei" || $serverType == "alireza")?"XTLSSettings":"xtlsSettings";
     $reality = $server_info['reality'];
